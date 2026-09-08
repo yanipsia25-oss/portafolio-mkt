@@ -45,3 +45,33 @@ body {
     text-align: center;
     /* Centra los textos que pongas dentro por defecto */
 }
+
+/* ==========================================================================
+   3. MENÚ DE NAVEGACIÓN SUPERIOR
+   ========================================================================== */
+.nav-menu ul {
+    list-style: none;             /* Quita los puntos de la lista */
+    display: flex;                /* Coloca los enlaces en fila horizontal */
+    justify-content: flex-end;    /* Empuja el menú a la derecha */
+    gap: 24px;                    /* Espacio entre cada palabra */
+    margin-bottom: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;        /* Quita el subrayado azul */
+    color: #475569;               /* Color gris elegante */
+    font-weight: 600;
+    font-size: 14px;
+    padding-bottom: 5px;
+    transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+    color: #4f46e5;               /* Color morado suave al pasar el mouse */
+}
+
+/* Línea decorativa debajo de 'Inicio' */
+.nav-menu a.active {
+    color: #0f172a;               /* Color más oscuro para destacar */
+    border-bottom: 2.5px solid #4f46e5; /* La rayita que ves en la imagen */
+}
