@@ -50,16 +50,22 @@ body {
    3. MENÚ DE NAVEGACIÓN SUPERIOR
    ========================================================================== */
 .nav-menu ul {
-    list-style: none;             /* Quita los puntos de la lista */
-    display: flex;                /* Coloca los enlaces en fila horizontal */
-    justify-content: flex-end;    /* Empuja el menú a la derecha */
-    gap: 24px;                    /* Espacio entre cada palabra */
+    list-style: none;
+    /* Quita los puntos de la lista */
+    display: flex;
+    /* Coloca los enlaces en fila horizontal */
+    justify-content: flex-end;
+    /* Empuja el menú a la derecha */
+    gap: 24px;
+    /* Espacio entre cada palabra */
     margin-bottom: 30px;
 }
 
 .nav-menu a {
-    text-decoration: none;        /* Quita el subrayado azul */
-    color: #475569;               /* Color gris elegante */
+    text-decoration: none;
+    /* Quita el subrayado azul */
+    color: #475569;
+    /* Color gris elegante */
     font-weight: 600;
     font-size: 14px;
     padding-bottom: 5px;
@@ -67,11 +73,141 @@ body {
 }
 
 .nav-menu a:hover {
-    color: #4f46e5;               /* Color morado suave al pasar el mouse */
+    color: #4f46e5;
+    /* Color morado suave al pasar el mouse */
 }
 
 /* Línea decorativa debajo de 'Inicio' */
 .nav-menu a.active {
-    color: #0f172a;               /* Color más oscuro para destacar */
-    border-bottom: 2.5px solid #4f46e5; /* La rayita que ves en la imagen */
+    color: #0f172a;
+    /* Color más oscuro para destacar */
+    border-bottom: 2.5px solid #4f46e5;
+    /* La rayita que ves en la imagen */
+}
+
+/* ==========================================================================
+   4. FOTO DE PERFIL CIRCULAR (AVATAR)
+   ========================================================================== */
+.avatar-container {
+    width: 140px;
+    /* Ancho del círculo */
+    height: 140px;
+    /* Alto del círculo */
+    margin: 0 auto 24px auto;
+    /* Centra la foto en el medio */
+    border-radius: 50%;
+    /* Hace la caja completamente redonda */
+    background: #e0e7ff;
+    /* El aro de color lila suave exterior */
+    padding: 6px;
+    /* El grosor del aro */
+}
+
+.avatar-img {
+    width: 100%;
+    /* Ocupa todo el interior del círculo */
+    height: 100%;
+    border-radius: 50%;
+    /* Hace que la foto sea circular */
+    object-fit: cover;
+    /* Evita que tu foto se deforme o aplaste */
+    display: block;
+}
+
+/* ==========================================================================
+   5. INFORMACIÓN PERSONAL Y TEXTOS
+   ========================================================================== */
+.profile-name {
+    font-size: 26px;
+    /* Tamaño del nombre en grande */
+    font-weight: 700;
+    /* Letra gruesa / negrita */
+    color: #0f172a;
+    /* Azul noche elegante */
+    margin-bottom: 8px;
+    /* Espacio debajo del nombre */
+}
+
+.profile-title {
+    font-size: 15px;
+    /* Tamaño de tu carrera */
+    color: #475569;
+    /* Color gris azulado suave */
+    margin-bottom: 20px;
+}
+
+/* La rayita decorativa */
+.divider {
+    width: 44px;
+    /* Ancho pequeño y centrado */
+    height: 3px;
+    /* Grosor de la línea */
+    background-color: #818cf8;
+    /* Tono lila decorativo */
+    border: none;
+    border-radius: 2px;
+    margin: 0 auto 24px auto;
+    /* Centra la rayita */
+}
+
+.profile-bio {
+    font-size: 14px;
+    line-height: 1.6;
+    /* Espacio cómodo entre renglones */
+    color: #475569;
+    max-width: 440px;
+    /* Evita que el texto sea demasiado ancho */
+    margin: 0 auto 32px auto;
+    /* Centra el párrafo */
+}
+
+/* ==========================================================================
+   6. BOTONES DE REDES SOCIALES (ORDENADOS Y SEPARADOS)
+   ========================================================================== */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    /* Pone los botones uno debajo del otro */
+    gap: 12px;
+    /* La distancia exacta entre botón y botón */
+    max-width: 280px;
+    /* Ancho fijo para que no sean gigantes */
+    margin: 0 auto;
+    /* Centra los botones en la tarjeta */
+}
+
+.social-btn {
+    display: flex;
+    justify-content: center;
+    /* Centra el texto dentro del botón */
+    align-items: center;
+    text-decoration: none;
+    /* Quita el subrayado azul */
+    padding: 12px 20px;
+    /* Colchón interno acolchonado */
+    border: 1.5px solid #c7d2fe;
+    /* Borde lila suave como la foto */
+    border-radius: 12px;
+    /* Esquinas redondeadas */
+    color: #1e293b;
+    /* Color del texto */
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+    /* Animación suave al pasar el mouse */
+}
+
+/* Efecto al pasar el cursor sobre el botón (Hover) */
+.social-btn:hover {
+    border-color: #6366f1;
+    /* Se intensifica el borde */
+    background-color: #f5f3ff;
+    /* Fondo con tinte morado muy suave */
+    color: #4338ca;
+    /* Texto morado */
+    transform: translateY(-2px);
+    /* Pequeño salto elegante hacia arriba */
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+    /* Sombrita sutil */
 }
