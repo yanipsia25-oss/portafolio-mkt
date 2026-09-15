@@ -363,88 +363,226 @@ body {
     height: 16px;
 }
 
-/* Columna Lateral de Contacto */
+/* Columna Lateral de Contacto Personalizada */
 .contact-aside-column {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding-top: 10px;
-}
-
-.contact-illustration-wrapper {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 16px;
-    overflow: hidden;
-    display: flex;
     justify-content: center;
+}
+
+.contact-card-personalized {
+    background: linear-gradient(145deg, #ffffff 0%, #f7f6fe 100%);
+    border: 1.5px solid #ede9fe;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-card-personalized:hover {
+    box-shadow: 0 12px 28px rgba(99, 102, 241, 0.12);
+}
+
+/* Cabecera del perfil de contacto */
+.contact-profile-header {
+    display: flex;
     align-items: center;
+    gap: 14px;
 }
 
-.contact-illustration-img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 16px;
+.contact-avatar-wrapper {
+    position: relative;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, #4f46e5, #818cf8);
+    flex-shrink: 0;
 }
 
-.contact-direct-card {
+.contact-avatar-img {
     width: 100%;
-    background-color: #f7f6fe;
-    border: 1px solid #ede9fe;
-    border-radius: 14px;
-    padding: 16px;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 2px solid #ffffff;
+}
+
+.contact-status-indicator {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 13px;
+    height: 13px;
+    background-color: #10b981;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+}
+
+.contact-profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.contact-profile-name {
+    font-size: 16.5px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.contact-profile-role {
+    font-size: 12.5px;
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+.contact-status-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #065f46;
+    background-color: #d1fae5;
+    padding: 2.5px 8px;
+    border-radius: 12px;
+    margin-top: 4px;
+    width: fit-content;
+}
+
+.contact-status-tag .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #10b981;
+}
+
+/* Cita / mensaje personalizado */
+.contact-personal-quote {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #475569;
+    font-style: italic;
+    background-color: #ffffff;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border-left: 3px solid #4f46e5;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* Lista de canales de contacto directo */
+.contact-channels-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.contact-channel-item {
     display: flex;
     align-items: center;
     gap: 12px;
+    padding: 9px 12px;
+    background-color: #ffffff;
+    border: 1.2px solid #e2e8f0;
+    border-radius: 11px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
 }
 
-.direct-card-icon {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background-color: #ede9fe;
-    color: #5542f6;
+.contact-channel-item:hover {
+    border-color: #6366f1;
+    background-color: #fcfaff;
+    transform: translateX(3px);
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.08);
+}
+
+.channel-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
 }
 
-.direct-card-icon svg {
-    width: 18px;
-    height: 18px;
+.channel-icon svg {
+    width: 17px;
+    height: 17px;
 }
 
-.direct-card-text {
+.channel-icon.whatsapp {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+
+.channel-icon.email {
+    background-color: #ede9fe;
+    color: #4f46e5;
+}
+
+.channel-icon.instagram {
+    background-color: #fce7f3;
+    color: #db2777;
+}
+
+.channel-content {
+    flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 2px;
 }
 
-.direct-card-label {
-    font-size: 12px;
+.channel-label {
+    font-size: 10.5px;
     font-weight: 700;
-    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #64748b;
 }
 
-.direct-card-email {
-    font-size: 13px;
+.channel-value {
+    font-size: 12.5px;
     font-weight: 600;
-    color: #5542f6;
-    text-decoration: none;
-    word-break: break-all;
+    color: #0f172a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.direct-card-email:hover {
-    text-decoration: underline;
+.channel-action-arrow {
+    color: #94a3b8;
+    font-size: 13px;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.direct-card-subtext {
+.contact-channel-item:hover .channel-action-arrow {
+    color: #4f46e5;
+    transform: translateX(3px);
+}
+
+/* Nota de confianza */
+.contact-footer-note {
     font-size: 11px;
     color: #64748b;
-    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 2px;
+}
+
+.lightning-icon {
+    color: #f59e0b;
+    font-size: 12px;
 }
 
 /* ==========================================================================
@@ -473,15 +611,11 @@ body {
 
     .contact-layout {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 24px;
     }
 
     .contact-aside-column {
         order: -1;
         padding-top: 0;
-    }
-
-    .contact-illustration-wrapper {
-        max-width: 200px;
     }
 }
