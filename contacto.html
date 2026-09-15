@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Yanipsia Adasme | Portafolio</title>
+    <!-- Vinculación del archivo CSS común -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Tipografía Google Fonts Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- CONTENEDOR CENTRAL (TARJETA ANCHA) -->
+    <main class="card card-wide">
+        <!-- MENÚ DE NAVEGACIÓN COMÚN -->
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- LAYOUT DE CONTACTO EN DOS COLUMNAS -->
+        <div class="contact-layout">
+            <!-- COLUMNA IZQUIERDA: FORMULARIO -->
+            <section class="contact-form-column">
+                <header class="page-header">
+                    <h1 class="page-title">Contacto</h1>
+                    <div class="title-accent"></div>
+                    <p class="page-subtitle">
+                        ¿Tienes un proyecto en mente? ¡Hablemos! Completa el formulario y me pondré en contacto contigo.
+                    </p>
+                </header>
+
+                <form action="#" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                        </svg>
+                        Enviar mensaje
+                    </button>
+                </form>
+            </section>
+
+            <!-- COLUMNA DERECHA: ILUSTRACIÓN Y DATOS DIRECTOS -->
+            <aside class="contact-aside-column">
+                <div class="contact-illustration-wrapper">
+                    <img src="img/contacto-ilustracion.jpg" alt="Ilustración de sobre de correo y avión de papel" class="contact-illustration-img">
+                </div>
+
+                <div class="contact-direct-card">
+                    <div class="direct-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <div class="direct-card-text">
+                        <span class="direct-card-label">También puedes escribirme a</span>
+                        <a href="mailto:contacto.yanipsia@gmail.com" class="direct-card-email">contacto.yanipsia@gmail.com</a>
+                        <span class="direct-card-subtext">Responderé a la brevedad posible.</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+</body>
+
+</html>
