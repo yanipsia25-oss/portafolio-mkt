@@ -5,25 +5,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Permite calcular bordes y paddings dentro del tamaño del elemento */
 }
 
 body {
     font-family: 'Outfit', 'Arial', sans-serif;
     background-color: #f0f4f8;
-    /* Color de fondo de la página */
-
-    /* ESTRUCTURA DE CENTRADO (FLEXBOX) */
     display: flex;
     justify-content: center;
-    /* Centra la tarjeta horizontalmente */
     align-items: center;
-    /* Centra la tarjeta verticalmente */
-
     min-height: 100vh;
-    /* Fuerza al body a ocupar todo el alto de la pantalla visible */
-    padding: 20px;
-    /* Colchón de seguridad para que la tarjeta no choque en celulares */
+    padding: 30px 20px;
 }
 
 /* ==========================================================================
@@ -31,183 +22,466 @@ body {
    ========================================================================== */
 .card {
     background-color: #ffffff;
-
-    /* RESPONSIVIDAD */
     width: 90%;
-    /* Ocupará el 90% de la pantalla en dispositivos móviles */
     max-width: 600px;
-    /* En pantallas grandes, se detendrá y no medirá más de 600px */
-
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    /* Sombra suave para dar profundidad */
     padding: 40px;
     text-align: center;
-    /* Centra los textos que pongas dentro por defecto */
+    transition: max-width 0.3s ease;
+}
+
+/* Variante más ancha y alineada a la izquierda para Proyectos y Contacto */
+.card.card-wide {
+    max-width: 860px;
+    text-align: left;
 }
 
 /* ==========================================================================
-   3. MENÚ DE NAVEGACIÓN SUPERIOR
+   3. MENÚ DE NAVEGACIÓN SUPERIOR COMÚN
    ========================================================================== */
 .nav-menu ul {
     list-style: none;
-    /* Quita los puntos de la lista */
     display: flex;
-    /* Coloca los enlaces en fila horizontal */
     justify-content: flex-end;
-    /* Empuja el menú a la derecha */
     gap: 24px;
-    /* Espacio entre cada palabra */
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
 .nav-menu a {
     text-decoration: none;
-    /* Quita el subrayado azul */
     color: #475569;
-    /* Color gris elegante */
     font-weight: 600;
     font-size: 14px;
     padding-bottom: 5px;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, border-bottom 0.2s ease;
 }
 
 .nav-menu a:hover {
     color: #4f46e5;
-    /* Color morado suave al pasar el mouse */
 }
 
-/* Línea decorativa debajo de 'Inicio' */
+/* Indicador de página activa */
 .nav-menu a.active {
     color: #0f172a;
-    /* Color más oscuro para destacar */
     border-bottom: 2.5px solid #4f46e5;
-    /* La rayita que ves en la imagen */
 }
 
 /* ==========================================================================
-   4. FOTO DE PERFIL CIRCULAR (AVATAR)
+   4. FOTO DE PERFIL CIRCULAR (AVATAR EN INICIO)
    ========================================================================== */
 .avatar-container {
     width: 140px;
-    /* Ancho del círculo */
     height: 140px;
-    /* Alto del círculo */
     margin: 0 auto 24px auto;
-    /* Centra la foto en el medio */
     border-radius: 50%;
-    /* Hace la caja completamente redonda */
     background: #e0e7ff;
-    /* El aro de color lila suave exterior */
     padding: 6px;
-    /* El grosor del aro */
 }
 
 .avatar-img {
     width: 100%;
-    /* Ocupa todo el interior del círculo */
     height: 100%;
     border-radius: 50%;
-    /* Hace que la foto sea circular */
     object-fit: cover;
-    /* Evita que tu foto se deforme o aplaste */
     display: block;
 }
 
 /* ==========================================================================
-   5. INFORMACIÓN PERSONAL Y TEXTOS
+   5. INFORMACIÓN PERSONAL Y BIOGRAFÍA (INICIO)
    ========================================================================== */
 .profile-name {
     font-size: 26px;
-    /* Tamaño del nombre en grande */
     font-weight: 700;
-    /* Letra gruesa / negrita */
     color: #0f172a;
-    /* Azul noche elegante */
     margin-bottom: 8px;
-    /* Espacio debajo del nombre */
 }
 
 .profile-title {
     font-size: 15px;
-    /* Tamaño de tu carrera */
     color: #475569;
-    /* Color gris azulado suave */
     margin-bottom: 20px;
 }
 
-/* La rayita decorativa */
 .divider {
     width: 44px;
-    /* Ancho pequeño y centrado */
     height: 3px;
-    /* Grosor de la línea */
     background-color: #818cf8;
-    /* Tono lila decorativo */
     border: none;
     border-radius: 2px;
     margin: 0 auto 24px auto;
-    /* Centra la rayita */
 }
 
 .profile-bio {
     font-size: 14px;
     line-height: 1.6;
-    /* Espacio cómodo entre renglones */
     color: #475569;
     max-width: 440px;
-    /* Evita que el texto sea demasiado ancho */
     margin: 0 auto 32px auto;
-    /* Centra el párrafo */
 }
 
 /* ==========================================================================
-   6. BOTONES DE REDES SOCIALES (ORDENADOS Y SEPARADOS)
+   6. BOTONES DE REDES SOCIALES (INICIO)
    ========================================================================== */
 .social-links {
     display: flex;
     flex-direction: column;
-    /* Pone los botones uno debajo del otro */
     gap: 12px;
-    /* La distancia exacta entre botón y botón */
     max-width: 280px;
-    /* Ancho fijo para que no sean gigantes */
     margin: 0 auto;
-    /* Centra los botones en la tarjeta */
 }
 
 .social-btn {
     display: flex;
     justify-content: center;
-    /* Centra el texto dentro del botón */
     align-items: center;
     text-decoration: none;
-    /* Quita el subrayado azul */
     padding: 12px 20px;
-    /* Colchón interno acolchonado */
     border: 1.5px solid #c7d2fe;
-    /* Borde lila suave como la foto */
     border-radius: 12px;
-    /* Esquinas redondeadas */
     color: #1e293b;
-    /* Color del texto */
     font-weight: 600;
     font-size: 14px;
     background-color: #ffffff;
     transition: all 0.2s ease;
-    /* Animación suave al pasar el mouse */
 }
 
-/* Efecto al pasar el cursor sobre el botón (Hover) */
 .social-btn:hover {
     border-color: #6366f1;
-    /* Se intensifica el borde */
     background-color: #f5f3ff;
-    /* Fondo con tinte morado muy suave */
     color: #4338ca;
-    /* Texto morado */
     transform: translateY(-2px);
-    /* Pequeño salto elegante hacia arriba */
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
-    /* Sombrita sutil */
+}
+
+/* ==========================================================================
+   7. ENCABEZADOS DE SECCIÓN (PROYECTOS Y CONTACTO)
+   ========================================================================== */
+.page-header {
+    margin-bottom: 28px;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.title-accent {
+    width: 28px;
+    height: 3.5px;
+    background-color: #4f46e5;
+    border-radius: 2px;
+    margin-bottom: 12px;
+}
+
+.page-subtitle {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   8. PÁGINA DE PROYECTOS (LISTADO Y FILAS)
+   ========================================================================== */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.project-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.project-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.project-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.project-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.project-description {
+    font-size: 13.5px;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.project-action-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #4f46e5;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.project-action-link .arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.project-action-link:hover {
+    color: #3730a3;
+}
+
+.project-action-link:hover .arrow {
+    transform: translateX(4px);
+}
+
+.project-media {
+    width: 230px;
+    height: 130px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #f5f3ff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.project-row:hover .project-img {
+    transform: scale(1.04);
+}
+
+/* ==========================================================================
+   9. PÁGINA DE CONTACTO (FORMULARIO Y COLUMNA LATERAL)
+   ========================================================================== */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.contact-form-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 13.5px;
+    color: #0f172a;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 95px;
+}
+
+.btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 18px;
+    background-color: #5542f6;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(85, 66, 246, 0.28);
+}
+
+.btn-submit:hover {
+    background-color: #4333db;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(85, 66, 246, 0.38);
+}
+
+.btn-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Columna Lateral de Contacto */
+.contact-aside-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.contact-illustration-wrapper {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-illustration-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+}
+
+.contact-direct-card {
+    width: 100%;
+    background-color: #f7f6fe;
+    border: 1px solid #ede9fe;
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.direct-card-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #ede9fe;
+    color: #5542f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.direct-card-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.direct-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.direct-card-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.direct-card-email {
+    font-size: 13px;
+    font-weight: 600;
+    color: #5542f6;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.direct-card-email:hover {
+    text-decoration: underline;
+}
+
+.direct-card-subtext {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* ==========================================================================
+   10. RESPONSIVIDAD (DISPOSITIVOS MÓVILES Y TABLETS)
+   ========================================================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    .card {
+        padding: 24px 18px;
+        width: 95%;
+    }
+
+    .project-row {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .project-media {
+        width: 100%;
+        height: 160px;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .contact-aside-column {
+        order: -1;
+        padding-top: 0;
+    }
+
+    .contact-illustration-wrapper {
+        max-width: 200px;
+    }
 }
