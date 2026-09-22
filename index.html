@@ -7,7 +7,9 @@
     <title>Mi Portafolio - Tarjeta de Presentación</title>
     <!-- Vinculación del archivo CSS externo -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Opcional: Tipografía desde Google Fonts (Outfit) -->
+    <!-- Estilos de la librería Animate On Scroll (AOS) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Tipografía desde Google Fonts (Outfit) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -15,41 +17,62 @@
 
 <body>
 
-    <!-- CONTENEDOR CENTRAL (TARJETA) -->
-    <main class="card">
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="index.html" class="active">Inicio</a></li>
-                <li><a href="proyectos.html">Proyectos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+    <!-- CONTENEDOR CENTRAL SEMÁNTICO (TARJETA DE PRESENTACIÓN) -->
+    <main class="card" data-aos="fade-up" data-aos-duration="700">
+        <!-- 1. ENCABEZADO Y MENÚ DE NAVEGACIÓN -->
+        <header class="main-header">
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <!-- 2. FOTO DE PERFIL (AVATAR) -->
-        <div class="avatar-container">
-            <img src="img/avatar.jpg" alt="Foto de perfil de Yanipsia Adasme" class="avatar-img">
-        </div>
-        <!-- 3. INFORMACIÓN PERSONAL -->
-        <h1 class="profile-name">Yanipsia Adasme</h1>
-        <p class="profile-title">Estudiante de Ingeniería en Marketing Digital</p>
+        <!-- 2. SECCIÓN DE PERFIL PERSONAL -->
+        <section class="profile-section">
+            <!-- Foto de perfil con animación zoom-in -->
+            <div class="avatar-container" data-aos="zoom-in" data-aos-delay="200">
+                <img src="img/avatar.jpg" alt="Foto de perfil de Yanipsia Adasme" class="avatar-img">
+            </div>
 
-        <!-- Línea horizontal decorativa -->
-        <hr class="divider">
+            <!-- Información personal y profesional -->
+            <h1 class="profile-name" data-aos="fade-up" data-aos-delay="300">Yanipsia Adasme</h1>
+            <p class="profile-title" data-aos="fade-up" data-aos-delay="350">Estudiante de Ingeniería en Marketing Digital</p>
 
-        <p class="profile-bio">
-            Me apasiona el diseño y el marketing digital. Me enfoco en combinar creatividad,
-            estrategia y tecnología para crear experiencias visuales y proyectos que conecten con las personas.
-        </p>
-        <!-- 4. BOTONES DE REDES SOCIALES -->
-        <div class="social-links">
-            <a href="https://www.instagram.com/Yaniiii.liset/" target="_blank" class="social-btn">Instagram</a>
-            <a href="https://wa.me/56942504374" target="_blank" class="social-btn">WhatsApp</a>
-            <a href="https://www.linkedin.com" target="_blank" class="social-btn">LinkedIn</a>
-        </div>
+            <!-- Línea horizontal decorativa -->
+            <hr class="divider" data-aos="scale-up" data-aos-delay="400">
 
+            <p class="profile-bio" data-aos="fade-up" data-aos-delay="450">
+                Me apasiona el diseño y el marketing digital. Me enfoco en combinar creatividad,
+                estrategia y tecnología para crear experiencias visuales y proyectos que conecten con las personas.
+            </p>
+        </section>
 
+        <!-- 3. SECCIÓN DE REDES SOCIALES Y ENLACES EXTERNOS -->
+        <section class="social-section" data-aos="fade-up" data-aos-delay="500">
+            <div class="social-links">
+                <a href="https://www.instagram.com/Yaniiii.liset/" target="_blank" rel="noopener noreferrer" class="social-btn">Instagram</a>
+                <a href="https://wa.me/56942504374" target="_blank" rel="noopener noreferrer" class="social-btn">WhatsApp</a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
+            </div>
+        </section>
+
+        <!-- 4. PIE DE PÁGINA SEMÁNTICO -->
+        <footer class="card-footer" data-aos="fade" data-aos-delay="600">
+            <p>&copy; 2026 Yanipsia Adasme &middot; Portafolio de Marketing Digital</p>
+        </footer>
     </main>
 
+    <!-- Librería JavaScript de AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 </body>
 
 </html>

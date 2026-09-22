@@ -7,6 +7,8 @@
     <title>Contacto - Yanipsia Adasme | Portafolio</title>
     <!-- Vinculación del archivo CSS común -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Estilos de la librería Animate On Scroll (AOS) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Tipografía Google Fonts Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,21 +17,23 @@
 
 <body>
 
-    <!-- CONTENEDOR CENTRAL (TARJETA ANCHA) -->
-    <main class="card card-wide">
+    <!-- CONTENEDOR CENTRAL SEMÁNTICO (TARJETA ANCHA PARA CONTACTO) -->
+    <main class="card card-wide" data-aos="fade-up" data-aos-duration="700">
         <!-- MENÚ DE NAVEGACIÓN COMÚN -->
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="proyectos.html">Proyectos</a></li>
-                <li><a href="contacto.html" class="active">Contacto</a></li>
-            </ul>
-        </nav>
+        <header class="main-header">
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
 
         <!-- LAYOUT DE CONTACTO EN DOS COLUMNAS -->
         <div class="contact-layout">
             <!-- COLUMNA IZQUIERDA: FORMULARIO -->
-            <section class="contact-form-column">
+            <section class="contact-form-column" data-aos="fade-right" data-aos-delay="200">
                 <header class="page-header">
                     <h1 class="page-title">Contacto</h1>
                     <div class="title-accent"></div>
@@ -66,7 +70,7 @@
             </section>
 
             <!-- COLUMNA DERECHA: TARJETA DE CONTACTO PERSONALIZADA -->
-            <aside class="contact-aside-column">
+            <aside class="contact-aside-column" data-aos="fade-left" data-aos-delay="300">
                 <div class="contact-card-personalized">
                     <!-- Cabecera con foto de perfil y badge de disponibilidad -->
                     <div class="contact-profile-header">
@@ -153,8 +157,21 @@
                 </div>
             </aside>
         </div>
+
+        <!-- PIE DE PÁGINA SEMÁNTICO -->
+        <footer class="card-footer" data-aos="fade" data-aos-delay="400">
+            <p>&copy; 2026 Yanipsia Adasme &middot; Portafolio de Marketing Digital</p>
+        </footer>
     </main>
 
+    <!-- Librería JavaScript de AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 </body>
 
 </html>

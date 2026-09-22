@@ -7,6 +7,8 @@
     <title>Proyectos - Yanipsia Adasme | Portafolio</title>
     <!-- Vinculación del archivo CSS común -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Estilos de la librería Animate On Scroll (AOS) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Tipografía Google Fonts Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,34 +17,36 @@
 
 <body>
 
-    <!-- CONTENEDOR CENTRAL (TARJETA ANCHA PARA PROYECTOS) -->
-    <main class="card card-wide">
+    <!-- CONTENEDOR CENTRAL SEMÁNTICO (TARJETA ANCHA PARA PROYECTOS) -->
+    <main class="card card-wide" data-aos="fade-up" data-aos-duration="700">
         <!-- MENÚ DE NAVEGACIÓN COMÚN -->
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="proyectos.html" class="active">Proyectos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <header class="main-header">
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="proyectos.html" class="active">Proyectos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
 
         <!-- ENCABEZADO DE LA PÁGINA -->
-        <header class="page-header">
+        <header class="page-header" data-aos="fade-down" data-aos-delay="150">
             <h1 class="page-title">Proyectos</h1>
             <div class="title-accent"></div>
             <p class="page-subtitle">Planes de marketing y estrategias de marca diseñados en Canva.</p>
         </header>
 
-        <!-- LISTA DE PROYECTOS -->
+        <!-- LISTA SEMÁNTICA DE PROYECTOS -->
         <section class="projects-list">
             <!-- Proyecto 1: Plan de marketing PedidosYa -->
-            <article class="project-row">
+            <article class="project-row" data-aos="fade-up" data-aos-delay="200">
                 <div class="project-details">
                     <h2 class="project-name">Plan de Marketing Digital: PedidosYa</h2>
                     <p class="project-description">
                         Diseño y desarrollo de plan de marketing enfocado en posicionamiento de marca, estrategia de delivery y captación digital de clientes.
                     </p>
-                    <a href="https://canva.link/4ierigq825n837b" target="_blank" class="project-action-link">
+                    <a href="https://canva.link/4ierigq825n837b" target="_blank" rel="noopener noreferrer" class="project-action-link">
                         Ver proyecto en Canva <span class="arrow">&rarr;</span>
                     </a>
                 </div>
@@ -52,13 +56,13 @@
             </article>
 
             <!-- Proyecto 2: Plan de marketing Tottus -->
-            <article class="project-row">
+            <article class="project-row" data-aos="fade-up" data-aos-delay="300">
                 <div class="project-details">
                     <h2 class="project-name">Plan de Marketing: Tottus</h2>
                     <p class="project-description">
                         Estrategia integral de marketing para retail y supermercados, análisis de público objetivo, mix promocional y optimización de presencia comercial.
                     </p>
-                    <a href="https://canva.link/iyv4ypbs5pezcm4" target="_blank" class="project-action-link">
+                    <a href="https://canva.link/iyv4ypbs5pezcm4" target="_blank" rel="noopener noreferrer" class="project-action-link">
                         Ver proyecto en Canva <span class="arrow">&rarr;</span>
                     </a>
                 </div>
@@ -68,13 +72,13 @@
             </article>
 
             <!-- Proyecto 3: Campaña Jumbo Delivery -->
-            <article class="project-row">
+            <article class="project-row" data-aos="fade-up" data-aos-delay="400">
                 <div class="project-details">
                     <h2 class="project-name">Campaña: Jumbo Delivery</h2>
                     <p class="project-description">
                         Estrategia de comunicación y presentación visual para el servicio de despacho a domicilio de Jumbo, orientada a fidelización y experiencia omnicanal.
                     </p>
-                    <a href="https://canva.link/dzezbvujthzv29a" target="_blank" class="project-action-link">
+                    <a href="https://canva.link/dzezbvujthzv29a" target="_blank" rel="noopener noreferrer" class="project-action-link">
                         Ver proyecto en Canva <span class="arrow">&rarr;</span>
                     </a>
                 </div>
@@ -83,8 +87,21 @@
                 </div>
             </article>
         </section>
+
+        <!-- PIE DE PÁGINA SEMÁNTICO -->
+        <footer class="card-footer" data-aos="fade" data-aos-delay="500">
+            <p>&copy; 2026 Yanipsia Adasme &middot; Portafolio de Marketing Digital</p>
+        </footer>
     </main>
 
+    <!-- Librería JavaScript de AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 </body>
 
 </html>
