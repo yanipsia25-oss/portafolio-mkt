@@ -13,7 +13,8 @@ html {
 
 body {
     font-family: 'Outfit', 'Arial', sans-serif;
-    background-color: #f0f4f8;
+    background: linear-gradient(135deg, #fff0f5 0%, #fde4ec 100%);
+    background-color: #fdf0f4; /* Tono rosado clarito suave y elegante */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +37,7 @@ img {
     width: 90%;
     max-width: 600px;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(219, 39, 119, 0.06);
     padding: 40px;
     text-align: center;
     transition: max-width 0.3s ease;
@@ -69,13 +70,13 @@ img {
 }
 
 .nav-menu a:hover {
-    color: #4f46e5;
+    color: #db2777;
 }
 
 /* Indicador de página activa */
 .nav-menu a.active {
     color: #0f172a;
-    border-bottom: 2.5px solid #4f46e5;
+    border-bottom: 2.5px solid #ec4899;
 }
 
 /* ==========================================================================
@@ -86,7 +87,7 @@ img {
     height: 140px;
     margin: 0 auto 24px auto;
     border-radius: 50%;
-    background: #e0e7ff;
+    background: #fce7f3;
     padding: 6px;
 }
 
@@ -117,7 +118,7 @@ img {
 .divider {
     width: 44px;
     height: 3px;
-    background-color: #818cf8;
+    background-color: #f472b6;
     border: none;
     border-radius: 2px;
     margin: 0 auto 24px auto;
@@ -148,7 +149,7 @@ img {
     align-items: center;
     text-decoration: none;
     padding: 12px 20px;
-    border: 1.5px solid #c7d2fe;
+    border: 1.5px solid #fbcfe8;
     border-radius: 12px;
     color: #1e293b;
     font-weight: 600;
@@ -158,11 +159,11 @@ img {
 }
 
 .social-btn:hover {
-    border-color: #6366f1;
-    background-color: #f5f3ff;
-    color: #4338ca;
+    border-color: #ec4899;
+    background-color: #fff1f5;
+    color: #be185d;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.18);
 }
 
 /* ==========================================================================
@@ -182,7 +183,7 @@ img {
 .title-accent {
     width: 28px;
     height: 3.5px;
-    background-color: #4f46e5;
+    background-color: #ec4899;
     border-radius: 2px;
     margin-bottom: 12px;
 }
@@ -241,7 +242,7 @@ img {
     gap: 6px;
     font-size: 13.5px;
     font-weight: 600;
-    color: #4f46e5;
+    color: #db2777;
     text-decoration: none;
     transition: color 0.2s ease, transform 0.2s ease;
 }
@@ -252,7 +253,7 @@ img {
 }
 
 .project-action-link:hover {
-    color: #3730a3;
+    color: #9d174d;
 }
 
 .project-action-link:hover .arrow {
@@ -335,8 +336,8 @@ img {
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    border-color: #ec4899;
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.18);
 }
 
 .form-group textarea {
@@ -351,7 +352,7 @@ img {
     gap: 8px;
     width: 100%;
     padding: 12px 18px;
-    background-color: #5542f6;
+    background-color: #ec4899;
     color: #ffffff;
     border: none;
     border-radius: 10px;
@@ -360,13 +361,13 @@ img {
     font-family: inherit;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 12px rgba(85, 66, 246, 0.28);
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.28);
 }
 
 .btn-submit:hover {
-    background-color: #4333db;
+    background-color: #db2777;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(85, 66, 246, 0.38);
+    box-shadow: 0 6px 16px rgba(219, 39, 119, 0.38);
 }
 
 .btn-icon {
@@ -382,11 +383,11 @@ img {
 }
 
 .contact-card-personalized {
-    background: linear-gradient(145deg, #ffffff 0%, #f7f6fe 100%);
-    border: 1.5px solid #ede9fe;
+    background: linear-gradient(145deg, #ffffff 0%, #fff1f5 100%);
+    border: 1.5px solid #fce7f3;
     border-radius: 18px;
     padding: 24px;
-    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.08);
+    box-shadow: 0 8px 24px rgba(219, 39, 119, 0.07);
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -394,7 +395,7 @@ img {
 }
 
 .contact-card-personalized:hover {
-    box-shadow: 0 12px 28px rgba(99, 102, 241, 0.12);
+    box-shadow: 0 12px 28px rgba(219, 39, 119, 0.12);
 }
 
 /* Cabecera del perfil de contacto */
@@ -410,7 +411,7 @@ img {
     height: 68px;
     border-radius: 50%;
     padding: 3px;
-    background: linear-gradient(135deg, #4f46e5, #818cf8);
+    background: linear-gradient(135deg, #ec4899, #f472b6);
     flex-shrink: 0;
 }
 
@@ -451,7 +452,7 @@ img {
 
 .contact-profile-role {
     font-size: 12.5px;
-    color: #4f46e5;
+    color: #db2777;
     font-weight: 600;
 }
 
@@ -485,7 +486,7 @@ img {
     background-color: #ffffff;
     padding: 10px 12px;
     border-radius: 10px;
-    border-left: 3px solid #4f46e5;
+    border-left: 3px solid #ec4899;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
 }
 
@@ -510,10 +511,10 @@ img {
 }
 
 .contact-channel-item:hover {
-    border-color: #6366f1;
-    background-color: #fcfaff;
+    border-color: #f472b6;
+    background-color: #fff5f8;
     transform: translateX(3px);
-    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.08);
+    box-shadow: 0 4px 10px rgba(236, 72, 153, 0.1);
 }
 
 .channel-icon {
@@ -577,7 +578,7 @@ img {
 }
 
 .contact-channel-item:hover .channel-action-arrow {
-    color: #4f46e5;
+    color: #ec4899;
     transform: translateX(3px);
 }
 
