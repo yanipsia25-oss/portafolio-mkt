@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Outfit', 'Arial', sans-serif;
     background-color: #f0f4f8;
@@ -15,6 +19,13 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 30px 20px;
+    overflow-x: hidden; /* Evita scroll horizontal al disparar animaciones AOS */
+}
+
+/* Regla general de escalabilidad fluida para imágenes */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* ==========================================================================
