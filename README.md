@@ -144,12 +144,40 @@ Para obtener el puntaje completo en el criterio de **Autoaprendizaje y Adaptaci�
 
 # Checklist antes de la entrega final
 
-- [ ] ¿El menú de navegación conecta correctamente las 3 páginas?
-- [ ] ¿El sitio funciona y se lee bien en celulares (sin scroll horizontal)?
-- [ ] ¿Se usó HTML semántico (`header`, `nav`, `main`, etc.)?
-- [ ] ¿Las imágenes tienen atributo `alt` y se cargan correctamente?
-- [ ] ¿El formulario de contacto tiene `label` e inputs apropiados?
-- [ ] ¿Incorporaste animaciones AOS en al menos 3 elementos?
-- [ ] ¿Tienes al menos 9 commits en total (mínimo 3 nuevos por fase)?
-- [ ] ¿Está publicado y actualizado en GitHub Pages?
-- [ ] ¿Activaste la opción **"Deployments"** en la configuración de **"About"** en tu repositorio de GitHub (haciendo clic en el engranaje ⚙️) para permitir a la profesora ver tu historial de publicación?
+- [x] ¿El menú de navegación conecta correctamente las 3 páginas?
+- [x] ¿El sitio funciona y se lee bien en celulares (sin scroll horizontal)?
+- [x] ¿Se usó HTML semántico (`header`, `nav`, `main`, `section`, `article`, `footer`)?
+- [x] ¿Las imágenes tienen atributo `alt` y se cargan correctamente?
+- [x] ¿El formulario de contacto tiene `label` e inputs apropiados?
+- [x] ¿Incorporaste animaciones AOS en al menos 3 elementos?
+- [x] ¿Tienes al menos 9 commits en total (mínimo 3 nuevos por fase)?
+- [x] ¿Está publicado y actualizado en GitHub Pages?
+- [x] ¿Activaste la opción **"Deployments"** en la configuración de **"About"** en tu repositorio de GitHub (haciendo clic en el engranaje ⚙️) para permitir a la profesora ver tu historial de publicación?
+
+---
+
+## 🛠️ Desafíos y Autoaprendizaje (Bitácora de Entrega Parcial 01)
+
+Como parte de los requisitos de evaluación y desarrollo autónomo, a continuación se documentan los principales retos técnicos enfrentados durante la construcción y optimización final del portafolio:
+
+### 1. Integración y Sincronización de la Librería de Animaciones AOS (Animate On Scroll)
+* **El problema:** Para la entrega parcial era obligatorio incorporar dinamismo y efectos visuales modernos mediante una librería externa sin sobrecargar la experiencia del usuario. Además, en pruebas iniciales en dispositivos móviles, algunas animaciones con traslación lateral (`fade-right` / `fade-left`) producían una barra de desplazamiento horizontal momentánea durante la carga.
+* **La investigación:** Se consultó la [Guía Parcial 01](documentacion/guia_parcial_01.md) y la documentación oficial de [AOS en GitHub (michalsnik/aos)](https://github.com/michalsnik/aos). Se investigaron las propiedades de inicialización como `duration`, `once` y el manejo de desbordes con CSS.
+* **La solución:** Se vincularon los recursos CDN oficiales de AOS (`aos.css` en `<head>` y `aos.js` al pie del `<body>`). Se inicializó la librería con `{ duration: 800, once: true }` para asegurar que las animaciones ocurran de manera fluida y una sola vez por visualización. Para eliminar cualquier riesgo de scroll horizontal en celulares, se aplicó `overflow-x: hidden` a las etiquetas `html` y `body` en `css/style.css`. Por último, se configuraron efectos personalizados como `zoom-in` para el avatar, `fade-down` para encabezados y `fade-up` con atributos `data-aos-delay` escalonados (100ms, 200ms, 300ms) en las tarjetas de proyectos y canales de contacto.
+
+### 2. Diseño Responsivo Adaptable (Mobile-First) y Eliminación de Scroll Horizontal
+* **El problema:** En pantallas de smartphones pequeños (menos de 400px de ancho), las tarjetas anchas de proyectos y el layout de dos columnas de la página de contacto quedaban comprimidos o podían desbordar el contenedor principal si no se gestionaban adecuadamente los anchos y márgenes.
+* **La investigación:** Se repasaron las directrices de diseño responsivo de la [Guía HTML y CSS](documentacion/guias_estudio/guia_html_css.md), la [Guía de Diseño](documentacion/guias_estudio/guia_diseno.md) y las recomendaciones de herramientas de inspección como Responsively App.
+* **La solución:** Se diseñó un sistema de medios (`@media (max-width: 768px)`) que adapta el contenedor principal `.card` al `95%` de la pantalla con un padding ergonómico de `24px 18px`. En la página de proyectos, se reorganizó la tarjeta mediante `flex-direction: column-reverse` para que la imagen se ubique arriba del contenido textual y se adapte al 100% del ancho. En la página de contacto, el grid de dos columnas se transformó a `grid-template-columns: 1fr`, priorizando la tarjeta de contacto directo con `order: -1` para que el visitante pueda contactar de inmediato en móvil. Se aplicó una regla universal `img { max-width: 100%; height: auto; }` para asegurar que ningún recurso visual se desborde.
+
+### 3. Reestructuración a HTML5 Semántico y Accesibilidad Web
+* **El problema:** Gran parte del maquetado dependía de contenedores genéricos (`<div>`), lo cual no cumplía con los estándares de la pauta respecto al significado estructural del código y la accesibilidad para lectores de pantalla. Asimismo, ninguna de las páginas contaba con un pie de página (`footer`) formal.
+* **La investigación:** Se estudió la sección de Maquetación Semántica de la [Guía Parcial 01](documentacion/guia_parcial_01.md), verificando la función específica de cada etiqueta: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>` y `<footer>`.
+* **La solución:** Se reestructuraron las tres páginas del sitio:
+  * `<header class="main-header">` para albergar la barra de navegación `<nav>`.
+  * `<main class="card">` como contenedor principal semántico del contenido central.
+  * `<section>` para agrupar áreas lógicas (biografía, redes sociales, lista de proyectos y formulario).
+  * `<article class="project-row">` para cada proyecto individual de Canva.
+  * `<footer class="card-footer">` al final de la tarjeta de cada página para mostrar los créditos y derechos de autor de Yanipsia Adasme.
+  * Se verificó que todas las imágenes incluyan descripciones precisas en el atributo `alt` y que los enlaces que abren nuevas pestañas posean `rel="noopener noreferrer"`.
+
